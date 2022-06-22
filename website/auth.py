@@ -34,9 +34,12 @@ def signup():
     if request.method== 'POST':
         username = request.form.get("username")
         email = request.form.get("email")
+        role = request.form.get("role")
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
 
+        print(role)
+        
         email_exits = User.query.filter_by(email = email).first()
         if email_exits:
             flash("User already exists in the system", category="error")
@@ -45,7 +48,7 @@ def signup():
         elif len(password1) < 6: 
             flash("Password is too short", category="error")
         else: 
-            new_user = User(username=username, email=email, password= generate_password_hash(password1, method='sha256'))
+            new_user = User(username=username, email=email,role= role, password= generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)

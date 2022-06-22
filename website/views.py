@@ -21,6 +21,12 @@ def managerapproval():
     if request.method=='POST':
         #logic for changing the status of the leave to approve or reject 
         print("logic for approval")
+        approve= request.form.get('approve')
+        reject = request.form.get('reject')
+        print("Approve value ",approve)
+        print("reject value ", reject)
+       # print(startdate= request.form.get('startdate'))
+
 
     leaves = Leave.query.filter_by(status= 3)
     return render_template('managerapproval.html', user=current_user, leaves= leaves)

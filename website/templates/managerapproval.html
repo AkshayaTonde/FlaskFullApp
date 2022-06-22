@@ -8,13 +8,13 @@
         <div class="card border-dark">
             <div class="card-body">
                 <div class="card-text"> 
-                    Employee Name : {{leave.username}}<br>
+                    Employee Name : {{leave.userid.username}}<br>
                     Leave Start Date : {{leave.startdate}} <br>
                     Leave End Date : {{leave.enddate}}<br>
                     Comments : {{leave.comment}}<br>
                     <div align="center">
-                        <button class="btn btn-danger" type="submit" value="2"> Reject </button> &nbsp;&nbsp;
-                        <button class="btn btn-success" type="submit" value="1"> Approve </button> &nbsp;
+                        <button class="btn btn-danger" id ="reject" type="submit" value="2"> Reject </button> &nbsp;&nbsp;
+                        <button class="btn btn-success" id="approve" type="submit" value="1"> Approve </button> &nbsp;
                     </div>
                     <br>
                 </div>
