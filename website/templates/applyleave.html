@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} Apply for leave {% endblock%}
+{% block content %}
+<h1 align="center">Leave Application Form</h1>
+
+<form method="POST">
+    <div class="form-group" >
+        
+        <label for="startdate"> Start Date </label>
+        <input type="date" id="startdate" name="startdate" class="form-control" required="True" placeholder="dd/mm/yyyy"/>
+        <br>
+        <label for="enddate"> End Date</label>
+        <input type="date" id="enddate" name="enddate" class="form-control" required="True" placeholder="dd/mm/yyyy"/>
+        <br>
+        <label for="comment"> Additional Comments</label>
+        <input type="text" id="comment" name="comment" class="form-control" placeholder="Additional Information for leave"/>
+        <br>
+        <div align="center">
+            <button class="btn btn-primary" type="submit">Apply Leave </button>
+        </div>
+    </div>
+</form>
+{% endblock %}

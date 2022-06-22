@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} Manager Approval {% endblock%}
+{% block content %}
+<form method="POST">
+<h1 align="center">Pending leaves</h1>
+    <div id="leaves">
+        {% for leave in leaves %}
+        <div class="card border-dark">
+            <div class="card-body">
+                <div class="card-text"> 
+                    Employee Name : {{leave.username}}<br>
+                    Leave Start Date : {{leave.startdate}} <br>
+                    Leave End Date : {{leave.enddate}}<br>
+                    Comments : {{leave.comment}}<br>
+                    <div align="center">
+                        <button class="btn btn-danger" type="submit" value="2"> Reject </button> &nbsp;&nbsp;
+                        <button class="btn btn-success" type="submit" value="1"> Approve </button> &nbsp;
+                    </div>
+                    <br>
+                </div>
+                <div class="card-footer text-muted">
+                    Leave applied on {{leave.leavedate_created}}
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</form>
+{% endblock %}

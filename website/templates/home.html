@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock%}
+{% block content %}
+<h1 align="center">Your leaves</h1>
+    <div id="leaves">
+        {% for leave in leaves %}
+        <div class="card border-dark">
+            <div class="card-body">
+                <div class="card-text"> 
+
+                    Leave Start Date : {{leave.startdate}} <br>
+                    Leave End Date : {{leave.enddate}}<br>
+                    Comments : {{leave.comment}}<br>
+                    {% if leave.status==1 %}
+                        Status : Approved 
+                    {% endif %}
+                    {% if leave.status==2 %}
+                        Status : Rejected 
+                    {% endif %}
+                    {% if leave.status==3 %}
+                        Status : Pending 
+                    {% endif %}
+                </div>
+                <div class="card-footer text-muted">
+                    Leave applied on {{leave.leavedate_created}}
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
