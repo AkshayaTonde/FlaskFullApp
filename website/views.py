@@ -18,18 +18,7 @@ def home():
 @views.route("/managerapproval", methods=['GET', 'POST'])
 @login_required
 def managerapproval():
-    if request.method=='POST':
-        #logic for changing the status of the leave to approve or reject 
-        print("logic for approval")
-        action= request.form.get('action')
-        leaveid = request.form.get("leaveid")
-        if action =='2':
-            print("Rejected ")
-            print("leave app id = ", leaveid)
-        else:
-            print("Approved ")
-            print("leave app id = ", leaveid)
-
+    #Get all the pending leaves and render them on the page 
     leaves = Leave.query.filter_by(status= 3)
     return render_template('managerapproval.html', user=current_user, leaves= leaves)
 
