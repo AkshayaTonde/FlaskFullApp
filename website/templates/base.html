@@ -17,8 +17,9 @@
             </button>
         <div class="collapse navbar-collapse" id="navbar"> 
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="/home">Home</a>
+                
                 {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="/home">Home</a>
                 <a class="nav-item nav-link" href="/applyleave">Apply Leave</a>
                     {%if user.role ==2%}
                         <a class="nav-item nav-link" href="/managerapproval"> Manager Task</a>

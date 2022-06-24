@@ -21,15 +21,37 @@ def managerapproval():
     if request.method=='POST':
         #logic for changing the status of the leave to approve or reject 
         print("logic for approval")
-        approve= request.form.get('approve')
-        reject = request.form.get('reject')
-        print("Approve value ",approve)
-        print("reject value ", reject)
-       # print(startdate= request.form.get('startdate'))
-
+        action= request.form.get('action')
+        leaveid = request.form.get("leaveid")
+        if action =='2':
+            print("Rejected ")
+            print("leave app id = ", leaveid)
+        else:
+            print("Approved ")
+            print("leave app id = ", leaveid)
 
     leaves = Leave.query.filter_by(status= 3)
     return render_template('managerapproval.html', user=current_user, leaves= leaves)
+
+@views.route('/rejectleave/<leaveid>')
+def rejectleave(leaveid):
+
+    leave = Leave.query.filter_by(leaveid=leaveid).first()
+    leave.status = 2
+    db.session.commit()
+
+    return redirect(url_for('views.managerapproval'))
+
+@views.route('/approveleave/<leaveid>')
+def approveleave(leaveid):
+
+    leave = Leave.query.filter_by(leaveid=leaveid).first()
+    leave.status = 1
+    db.session.commit()
+
+    return redirect(url_for('views.managerapproval'))
+
+
 
 @views.route("/applyleave", methods=['GET', 'POST'])
 @login_required

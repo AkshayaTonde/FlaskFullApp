@@ -9,12 +9,14 @@
             <div class="card-body">
                 <div class="card-text"> 
                     Employee Name : {{leave.userid.username}}<br>
+                    Leave Application number : {{leave.leaveid}} <br>
                     Leave Start Date : {{leave.startdate}} <br>
                     Leave End Date : {{leave.enddate}}<br>
                     Comments : {{leave.comment}}<br>
+                    <input hidden type="text"  id="leaveid" name="leaveid" value="{{leave.leaveid}}" >
                     <div align="center">
-                        <button class="btn btn-danger" id ="reject" type="submit" value="2"> Reject </button> &nbsp;&nbsp;
-                        <button class="btn btn-success" id="approve" type="submit" value="1"> Approve </button> &nbsp;
+                        <button class="btn btn-danger" id ="action" name="action"type="submit" value="2"> <a href="/rejectleave/{{leave.leaveid}}">Reject</a></button> &nbsp;&nbsp;
+                        <button class="btn btn-success" id="action" name="action" type="submit" value="1"> <a href="/approveleave/{{leave.leaveid}}">Approve</a> </button> &nbsp;
                     </div>
                     <br>
                 </div>
