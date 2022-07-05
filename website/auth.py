@@ -70,3 +70,8 @@ def logout():
 @login_required
 def managerapproval():
     return redirect(url_for("views.home"))
+
+
+@auth.route("/aboutus", methods=['GET'])
+def aboutus():
+    return render_template("aboutus.html", user= current_user)

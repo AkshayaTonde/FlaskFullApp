@@ -7,6 +7,10 @@ from . import db
 
 views = Blueprint("views", __name__)
 
+@views.route("/aboutus")
+def aboutus():
+    return render_template('aboutus.html', user=current_user)
+
 @views.route("/")
 @views.route("/home")
 @login_required
