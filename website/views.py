@@ -11,6 +11,10 @@ views = Blueprint("views", __name__)
 def aboutus():
     return render_template('aboutus.html', user=current_user)
 
+@views.route("/contactus")
+def aboutus():
+    return render_template('contactus.html', user=current_user)
+
 @views.route("/")
 @views.route("/home")
 @login_required

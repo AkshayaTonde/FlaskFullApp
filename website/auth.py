@@ -75,3 +75,9 @@ def managerapproval():
 @auth.route("/aboutus", methods=['GET'])
 def aboutus():
     return render_template("aboutus.html", user= current_user)
+
+
+
+@auth.route("/contactus", methods=['GET'])
+def aboutus():
+    return render_template("contactus.html", user= current_user)
