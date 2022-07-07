@@ -12,7 +12,7 @@ def aboutus():
     return render_template('aboutus.html', user=current_user)
 
 @views.route("/contactus")
-def aboutus():
+def contactus():
     return render_template('contactus.html', user=current_user)
 
 @views.route("/")

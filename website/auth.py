@@ -79,5 +79,5 @@ def aboutus():
 
 
 @auth.route("/contactus", methods=['GET'])
-def aboutus():
+def contactus():
     return render_template("contactus.html", user= current_user)
