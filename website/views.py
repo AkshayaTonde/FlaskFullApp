@@ -28,7 +28,7 @@ def home():
 @login_required
 def managerapproval():
     #Get all the pending leaves and render them on the page 
-    leaves = Leave.query.filter_by(status= 3)
+    leaves = Leave.query.filter_by(status= 3 )
     return render_template('managerapproval.html', user=current_user, leaves= leaves)
 
 @views.route('/rejectleave/<leaveid>')
