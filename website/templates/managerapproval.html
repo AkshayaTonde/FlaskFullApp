@@ -2,8 +2,9 @@
 {% block title %} Manager Approval {% endblock%}
 {% block content %}
 <form method="POST">
-<h1 align="center">Pending leaves</h1>
-    <div  align="center" id="leaves">
+
+    <div  class="col-md-8 form-group" align="center" id="leaves">
+        <h1 class="h3 mb-3 fw-normal">Pending leaves</h1>
         {% for leave in leaves %}
         <div class="card border-dark w-75">
             <div class="card-body">

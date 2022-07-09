@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block title %} Apply for leave {% endblock%}
 {% block content %}
-<h1 align="center">Leave Application Form</h1>
+
 
 <form method="POST">
-    <div class="form-group" >
-        
+    <div class="col-md-8 form-group" >
+        <h1 class="h3 mb-3 fw-normal">Leave Application Form</h1>
         <label for="startdate"> Start Date </label>
         <input type="date" id="startdate" name="startdate" class="form-control" required="True" placeholder="dd/mm/yyyy"/>
         <br>

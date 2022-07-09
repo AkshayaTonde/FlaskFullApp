@@ -7,6 +7,7 @@ from . import db
 
 views = Blueprint("views", __name__)
 
+@views.route("/")
 @views.route("/aboutus")
 def aboutus():
     return render_template('aboutus.html', user=current_user)
@@ -15,7 +16,7 @@ def aboutus():
 def contactus():
     return render_template('contactus.html', user=current_user)
 
-@views.route("/")
+
 @views.route("/home")
 @login_required
 def home():

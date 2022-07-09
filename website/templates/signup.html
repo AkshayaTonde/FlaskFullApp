@@ -1,35 +1,47 @@
-{% extends "base.html" %}
-{% block title %} Sign Up {% endblock%}
-{% block content %}
+    {% extends "base.html" %}
+    {% block title %} Sign Up {% endblock%}
+    {% block content %}
+
 <form method="POST">
-    <h3 align="center"> Sign up </h3>
-    <div class="form-group">
+    <div class="container">
+        <div class="row">
         
-        <label for="username">User Name</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="User's name"/>
+        <div class="col-md-8 form-group ">
+            <h1 class="h3 mb-3 fw-normal" > Sign up </h3>
+            <label for="username">User Name</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="User's name"/>
 
-        <label for="email"> Email Address</label>
-        <input type="email" id="email" name="email" class="form-control" placeholder="Enter email address"/>
-        <br>
-        <label for="role">Choose your role:</label>
+            <label for="email"> Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter email address"/>
+            <br>
+            <label for="role">Choose your role:</label>
 
-            <select name="role" id="role">
-            <option value="1">Employee</option>
-            <option value="2">Manager</option>
-            </select>
-        <br>
-        <label for="password1"> Password</label>
-        <input type="password" id="password1" name="password1" class="form-control" placeholder="Enter password"/>
+                <select name="role" id="role">
+                <option value="1">Employee</option>
+                <option value="2">Manager</option>
+                </select>
+            <br>
+            <label for="password1"> Password</label>
+            <input type="password" id="password1" name="password1" class="form-control" placeholder="Enter password"/>
 
-        <label for="password2"> Password Again</label>
-        <input type="password" id="password2" name="password2" class="form-control" placeholder="Enter password"/>
-        <br>
-        <div align="center">
-            <button class="btn btn-primary" type="submit">Sign Up </button>
+            <label for="password2"> Password Again</label>
+            <input type="password" id="password2" name="password2" class="form-control" placeholder="Enter password"/>
+            <br>
+            <div align="center">
+                <button class="btn btn-primary" type="submit">Sign Up </button>
+            </div>
+        </div>
+
+        <div class="col-md-4" >
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+                <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+                <button class="btn btn-primary btn-lg" type="button">Example button</button>
+                </div>
+        </div>
+
         </div>
     </div>
-    </form>
 </form>
-
-
-{% endblock %}
+    {% endblock %}

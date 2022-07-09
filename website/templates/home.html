@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block title %} Home {% endblock%}
 {% block content %}
-<h1 align="center">Your leaves</h1>
-    <div  id="leaves">
+
+    <div class="col-md-8 form-group" id="leaves">
+        <h1 class="h3 mb-3 fw-normal">Your leaves</h1>
         {% for leave in leaves %}
         <div class="card w-75 center border-dark">
             <div class="card-body">
@@ -25,7 +26,7 @@
                     Leave applied on {{leave.leavedate_created}}
                 </div>
             </div>
-
+            <hr class="featurette-divider">
         </div>
         {% endfor %}
     </div>
