@@ -2,7 +2,7 @@ from unicodedata import name
 from xml.etree.ElementTree import Comment
 from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import login_user, logout_user, login_required, current_user
-from .models import Leave
+from .models import Leave, User
 from . import db
 
 views = Blueprint("views", __name__)
